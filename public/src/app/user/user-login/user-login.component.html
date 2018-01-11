@@ -1,0 +1,16 @@
+<div class="container">
+  <form (ngSubmit)="login()" #loginData="ngForm">
+    <div class="form-group" [ngClass]="{'has-error': loginData.submitted && !username.valid}">
+      <label for="email">Username</label>
+      <input class="form-control" type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required/>
+      <div *ngIf="loginData.submitted && !username.valid" class="help-block">Username is required</div>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error': loginData.submitted && !password.valid}">
+      <label for="passowrd">Password</label>
+      <input class="form-control" type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required />
+      <div *ngIf="loginData.submitted && !password.valid" class="help-block">Password is required</div>
+    </div>
+    <input type="submit" class="btn btn-primary form-control" value="Log in">
+    <flash-messages></flash-messages>
+  </form>
+</div>

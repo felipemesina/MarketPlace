@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <p class="greet-user">Hello, {{ user }}</p>
+    <ul>
+      <a routerLink="['']"><i class="fa fa-user-circle-o"></i></a>
+      <li><a routerLink="['']">Your Posts</a></li>
+      <li><a routerLink="['']">Your Orders</a></li>
+      <li><a routerLink="['']">Wishlist</a></li>
+      <li><a [routerLink]="['create_post']" class="btn post-btn">Post to Classifieds</a></li>
+    </ul>
+
+  </div>
+  <button type="button" class="btn btn-warning" (click)="logout()">Log out</button>
+</div>

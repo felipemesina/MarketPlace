@@ -1,0 +1,11 @@
+form{
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 40%;
+}
+
+
+.invalid{
+  font-size: .75em;
+  color: red;
+}

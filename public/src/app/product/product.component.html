@@ -1,0 +1,19 @@
+
+
+<div class="container main">
+  <p class="newest-additions">Newest Additions</p>
+  <div class="card-columns">
+    <div class="card" *ngFor="let product of products">
+      <div class="img-container">
+      </div>
+      <div class="card-block">
+        <p class="card-title">{{ product.title }} - ${{ product.price }}</p>
+        <div class="img-container">
+          <img src="{{ product.image }}">
+        </div>
+        <p class="desc-text">{{ product.desc }}</p>
+        <p class="city-text">({{ product.location }})</p>
+      </div>
+    </div>
+  </div>
+</div>

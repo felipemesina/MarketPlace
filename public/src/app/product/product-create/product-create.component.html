@@ -1,0 +1,63 @@
+<div class="container">
+  <form (ngSubmit)="createPost(newProductData.value)" #newProductData="ngForm">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <div *ngIf="(newProductData.submitted) && title.errors">
+        <div [hidden]="!title.errors.required" class="invalid">Title is required</div>
+        <div [hidden]="!title.errors.minlength" class="invalid">Title must be at least 2 characters</div>
+        <div [hidden]="!title.errors.maxlength" class="invalid">Title must be less than 25 characters</div>
+      </div>
+      <input class="form-control" type="text"
+        name="title"
+        [(ngModel)]="newProduct.title"
+        #title="ngModel"
+        required
+        minlength="2"
+        maxlength="25"
+      />
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input class="form-control" type="text"
+        name="price"
+        [(ngModel)]="newProduct.price"
+        #price="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="desc">Description</label>
+      <div *ngIf="(newProductData.submitted) && desc.errors">
+        <div [hidden]="!desc.errors.required" class="invalid">Description is required</div>
+        <div [hidden]="!desc.errors.minlength" class="invalid">Description must be a minimum of 3 characters.</div>
+      </div>
+      <input class="form-control" type="text"
+        name="desc"
+        [(ngModel)]="newProduct.desc"
+        #desc="ngModel"
+        required
+        minlength="3"
+      />
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <div *ngIf="(newProductData.submitted) && desc.errors">
+        <div [hidden]="!location.errors.required" class="invalid">Location is required</div>
+      </div>
+      <input class="form-control" type="text"
+        name="location"
+        [(ngModel)]="newProduct.location"
+        #location="ngModel"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="image">Upload Image</label>
+      <input class="form-control" type="text"
+        name="image"
+        [(ngModel)]="newProduct.image"
+        #image="ngModel"
+      />
+    </div>
+    <input type="submit" class="btn btn-info form-control" value="Post">
+  </form>
+</div>

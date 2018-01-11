@@ -1,0 +1,27 @@
+{
+  "name": "market",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular2-flash-messages": "^2.0.5",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "connect": "^3.6.5",
+    "connect-mongo": "^2.0.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.7",
+    "nodemon": "^1.12.7",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1"
+  }
+}
