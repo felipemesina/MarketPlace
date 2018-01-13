@@ -1,12 +1,12 @@
 //**** Controllers ****
-const usersController = require("../controllers/users.js");
-const productsController = require("../controllers/products.js");
+const usersController = require("../../controllers/users");
+const productsController = require("../../controllers/products");
 const jwt = require('jsonwebtoken');
 
-module.exports = function(router) {
+module.exports = (router) => {
 
   //home page
-  router.get("/", productsController.home);
+  router.get("/", productsController.index);
 
   //get all products
   router.get("/products", productsController.index);
@@ -29,9 +29,6 @@ module.exports = function(router) {
   //get profile
   router.get("/profile", usersController.authenticate);
 
-  //no matching routes
-  router.all("*", (req,res,next) => {
-    res.sendfile(path.resolve("./public/dist/index.html"));
-  });
+
   return router;
 }

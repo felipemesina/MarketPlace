@@ -3,7 +3,7 @@ const Product = mongoose.model("Product");
 
 module.exports = {
   home: function(req, res) {
-    return res.render("index")
+    res.redirect("/products");
   },
   index: function(req, res) {
     let products = Product.find({}, (err, products) => {
