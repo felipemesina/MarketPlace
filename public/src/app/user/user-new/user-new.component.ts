@@ -3,6 +3,7 @@ import { User } from './../user';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-new',
@@ -10,16 +11,28 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./user-new.component.css']
 })
 export class UserNewComponent implements OnInit {
-  newUser = new User();
 
+  form: FormGroup;
 
   constructor(
     private _userService: UserService,
     private _router: Router,
+    private _formBuilder: FormBuilder,
     private _flashMessage: FlashMessagesService
-  ) { }
+  ) {
+    this.createForm();
+  }
 
   ngOnInit() {
+  }
+
+  createForm() {
+    this.form = this._formBuilder.group({
+      username: '',
+      email: '',
+      password: '',
+      confirm: ''
+    })
   }
 
   register = function (user: User){

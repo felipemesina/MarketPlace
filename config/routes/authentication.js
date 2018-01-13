@@ -20,14 +20,8 @@ module.exports = (router) => {
   //log in user
   router.post("/login", usersController.authenticate);
 
-  //get log in route
-  router.get("/login", usersController.login);
-
   //logout user
   router.get("/logout", usersController.logout);
-
-  //get profile
-  router.get("/profile", usersController.authenticate);
 
 
   return router;

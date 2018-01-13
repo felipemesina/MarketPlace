@@ -14,12 +14,32 @@ module.exports = {
           });
           //insert User to mongodb
           user.save((err) => {
-            if(err){
-              res.json({success: false, msg: "Something went wrong"});
-            }
-            else{
-              req.session.userId = user._id;
-              res.json({success: true, msg: "User registered"})
+            if (err) {
+              if (err.code === 11000) {
+                res.json({ success: false, msg: "Username or email already exists" });
+              } else {
+                console.log(err);
+                if (err.errors) {
+                  if (err.errors.email) {
+                    res.json({ success: false, msg: err.errors.email.message });
+                  } else {
+                    if (err.errors.username) {
+                      res.json({ success: false, msg: err.errors.username.message });
+                    } else {
+                      if (err.errors.password) {
+                        res.json({ success: false, msg: err.errors.password.message });
+                      } else {
+                        res.json({ success: false, msg: err });
+                      }
+                    }
+                  }
+                } else {
+                  res.json({ success: false, msg: "Something went wrong. Error: ",
+                  err });
+                }
+              }
+            } else {
+              res.json({success: true, msg: "User registered"});
             }
           })
         } else {
@@ -47,9 +67,6 @@ module.exports = {
     } else {
       res.json({success: false, message: "Username and Password are required"})
     }
-  },
-  login: function(req, res){
-    res.redirect("/logout");
   },
   logout: function(req, res){
     if (req.session){

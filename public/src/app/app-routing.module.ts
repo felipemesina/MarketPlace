@@ -8,7 +8,7 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { UserProfileComponent } from './user/user-profile/user-profile.component'
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: ProductComponent },
+  { path: '', component: ProductComponent },
   { path: 'register', component: UserNewComponent },
   { path: 'login', component:  UserLoginComponent},
   { path: 'create_post', component:  ProductCreateComponent},

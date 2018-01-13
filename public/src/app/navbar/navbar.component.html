@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <a [routerLink]="['']"><h1>MP marketplace</h1></a>
+    </div>
+    <div class="col-sm-4">
+      <div class="input-group search-field">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-primary"><span class="fa fa-search"></span></button>
+        </span>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <ul class="login-signup">
+        <li class="login-signup-links"><a [routerLink]="['login']">Log In</a></li>
+        <li class="login-signup-links"><a [routerLink]="['register']">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row menu-row">
+  <ul class="category-menu">
+    <li class="category-links"><a [routerLink]="['']">Electronics</a></li>
+    <li class="category-links"><a [routerLink]="['']">Music</a></li>
+    <li class="category-links"><a [routerLink]="['']">Home &amp; Garden</a></li>
+    <li class="category-links"><a [routerLink]="['']">Toys</a></li>
+    <li class="category-links"><a [routerLink]="['']">Sporting Goods</a></li>
+    <li class="category-links"><a [routerLink]="['']">Motors</a></li>
+    <li class="category-links"><a [routerLink]="['']">Fashion</a></li>
+    <li class="category-links"><a [routerLink]="['']">Misc</a></li>
+  </ul>
+</div>

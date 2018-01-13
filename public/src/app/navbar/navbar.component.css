@@ -1,0 +1,56 @@
+
+
+h1{
+  font-size: 2em;
+  color: #3d3d3d;
+  font-family: futura;
+  float: left;
+  margin-top: .25em;
+}
+
+.login-signup{
+  margin-top: .85em;
+  float: right;
+}
+
+.login-signup-links{
+  font-size: 1em;
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 1.5em;
+  vertical-align: text-bottom;
+}
+
+.col-sm-4{
+  background: #eaeaea;
+}
+
+.search-field{
+  margin-top: .60em;
+}
+
+.category-menu, a{
+  color: #777;
+  margin-bottom: -.10em;
+}
+
+.menu-row{
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.category-links{
+  font-size: .75em;
+  padding: 0 15px 5px 15px;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.post-btn{
+  font-size: .75em;
+  color: white;
+  background-color: orange;
+  margin: 5px 15px 0 0;
+  float: right;
+  padding: 3px 10px;
+}

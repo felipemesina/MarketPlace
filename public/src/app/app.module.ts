@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { UserProfileComponent } from './user/user-profile/user-profile.component
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/authguard';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,13 @@ import { AuthGuard } from './guards/authguard';
     UserLoginComponent,
     ProductComponent,
     ProductCreateComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     FlashMessagesModule
   ],

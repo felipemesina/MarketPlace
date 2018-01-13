@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
-const session = require("express-session");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const router = express.Router();
@@ -21,21 +20,9 @@ mongoose.connect(config.uri, (err) => {
 
 // const MongoStore = require('connect-mongo')(session);
 
-//Static Folder
-app.use(express.static(path.join(__dirname + "/public/dist")));
-
-//use sessions for tracking logins
-app.use(session ( {
-  secret: "you shall not pass!",
-  resave: true,
-  saveUninitialized: false,
-  // store: new MongoStore({ url: 'mongodb://localhost/marketdb' })
-}));
-
-
-//bodyParser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname + "/public/dist")));
 app.use('/authentication', authentication);
 
 
